@@ -18,28 +18,38 @@ public class WS01 {
     */ 
     public static void main(String[] args) {
         
-        //ystem.out.println(isPrime(4));
+        //System.out.println(isPrime(2));
         
-        //printPrimeList();
+        printPrimeList();
         
         //print1000FirstPrimes();
         
-        solveSimpleEquation();
+        //solveSimpleEquation();
     }
     
     //1
+    //xem n có chia hết cho số nào từ 2 đến căn n
+    //số nguyên tố nhỏ nhất là 2
     public static boolean isPrime(int n){
         int nSqrt = (int) Math.sqrt(n);
+        if (n < 2) 
+            return false;
+        //CPU chạy đến đây là chắc chắn n >=2
+        //với if, khi đã return thì không cần else vì nó đã thoát chương trình
+        
         for (int i = 2; i <= nSqrt; i++) {
-            if (n % i == 0) return false;
+            if (n % i == 0) 
+                return false;
         }
         return true;
     }
     
     //2
     public static void printPrimeList(){
-        for (int n = 1; n < 1000; n++) {
-            if (isPrime(n) == true)
+        for (int n = 1; n <= 1000; n++) {
+            if (isPrime(n)) //nguyên tắc if (điều gì đúng - true) thì làm gì
+                            //=> if (isPrime(n) == true) là thừa
+                            //chú ý re-use hàm ở mức cao nhất
                 System.out.print(n + " ");
         }
         System.out.println("\n");

@@ -1,0 +1,47 @@
+BÀI 4: OBJECT VÀ CLASS
+
+I. OBJECT
+
+-Biến, giá trị
+-Giá trị đơn (single value, primitive value)
+-Giá trị phức tạp, phức hợp (complex, object value): bao gồm các giá trị con và (string là giá trị phức tạp, vì bao gồm character)
+
+=. this: tên trỏ đến chính mình (chính giá trị của mình), khác tên giá trị được đặt cho
+
+=. Mỗi giá trị phức tạp (object value) sẽ có hai tên (tên được đặt và tên tự trỏ về mình)
+
+=. Đối tượng / Object: đuợc đặt tên, bên trong gồm nhiều thông tin phức tạp được gom lại thành một đơn vị, khi loại bỏ hết giá trị thì còn lại bộ khung.
+
+=. ĐỊNH NGHĨA: 
+- Object là những gì phức tạp, là những thứ quanh ta mà chứa đựng nhiều thông tin giúp ta mô tả được chúng, nhận diện được chúng và mô tả được chúng, đếm được chúng dưới dạng biến - value, đặc điểm - value. ví dụ {name: ...; yob: ...}
+- Là những thứ quanh ta có thể phân biệt được, đếm được, sờ được (qua các info) phân biệt qua:
+	-Tên gọi tắt / định danh (biến phức tạp/ biến object)
+	-Các đặc điểm (biến và value)
+	-Các hành vi/ phương thức/ hành động/ hehaviour/ method/ hàm
+
+II. CLASS
+
+- class, phân nhóm (classify). Tên gọi chung cho tập hợp các object có điểm tương đồng
+
+=. ĐỊNH NGHĨA: 
+- Class là một nhóm các object mà chia sẻ nhiều đặc tính chung hành động chung
+- Các ta gom nhóm, phân hạng object theo một tiêu chí nào đó. ví dụ Class CaSi; Class DienVien
+
+III. KỸ THUẬT SẢN XUẤT HÀNG LOẠT (NHÂN BẢN/ ĐÚC/ CONSTRUCT ĐỐI TƯỢNG)
+
+- Khuôn chứa đặc điểm của object để nhân bản: Class 
+
+- thing/instance/object
+
+=. QUY TRÌNH
+Tạo khuôn: class
+Đúc: Tạo vật thể / object - construct()
+Xem sản phẩm - getInfo()
+Chỉnh sửa - setInfo()
+
+IV. LẬP TRÌNH OOP (HƯỚNG ĐỐI TƯỢNG => LÀM KHUNG ĐỂ ĐÚC ra các đối tượng giống thực thể sống ngoài đời có đặc tính và hành vi trên đặc tính đó)
+
+- Tìm objects
+- Tìm ra được nhóm/ Class/ Khuôn/ Dàn khung thông tin
+- Đổ info vào để đúc ra object khác
+- tương đương kỹ thuật sản suất hàng loại
