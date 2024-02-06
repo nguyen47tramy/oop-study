@@ -35,6 +35,9 @@ public class DogManagement {
         
         chiHu.setNewName("eh");
         chiHu.bark();
+        
+        chiHu.getYob(); //lấy thông tin                 
+        System.out.println(chiHu.getYob()); //in thông tin mới lấy
     }
     
 }

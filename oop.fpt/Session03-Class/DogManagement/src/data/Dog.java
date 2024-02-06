@@ -36,9 +36,22 @@ public class Dog {
         System.out.printf("|%-10s|%5d|%5.1f|\n", name, yob, weight);
     }
     
+    //vì mặc định thông tin là sẽ giấu, khi mình giao tiếp mình mới bật nó
+    //chia sẻ info khi được hỏi:
+    //Hàm get-thông-tin()
+    public int getYob(){
+        return yob;
+    }
+    
     //thay đổi thông tin luc new / đúc ra đối tượng
     //hàm bình thường, không phải constructor
+    //Hàm set-thông-tin()
     public void setNewName(String newName){
         name = newName;
     }
+    
+    //getter - setter là cách để bảo đảm 
+    //tính toàn vẹn của dữ liệu (data intergrity), 
+    //tính không bị hiệu chỉnh của dữ liệu
+    
 }

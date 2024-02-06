@@ -1,5 +1,3 @@
-BÀI 4: OBJECT VÀ CLASS
-
 I. OBJECT
 
 -Biến, giá trị
@@ -45,3 +43,31 @@ IV. LẬP TRÌNH OOP (HƯỚNG ĐỐI TƯỢNG => LÀM KHUNG ĐỂ ĐÚC ra các
 - Tìm ra được nhóm/ Class/ Khuôn/ Dàn khung thông tin
 - Đổ info vào để đúc ra object khác
 - tương đương kỹ thuật sản suất hàng loại
+
+V. GETTER, SETTER
+Vì ENCAPSULATION nên những thông tin nên được để private để không để người ngoài thay đổi, tiếp cận, nhưng đôi khi mình cần lấy thông tin ra (ví dụ để sắp xếp, để tính toán). 
+Để lấy thông tin, dùng hàm get:
+- Hàm get-thông-tin()
+
+Để điều chỉnh, đè thông tin, dùng set:
+- Hàm set-thông-tin()
+
+VI. THIS
+- "Cái mình"
+- Mỗi một object trong class đều có this.
+- this được quy định trong khuôn (class), object có thể gọi truy cập được đến nó
+
+VII. OBJECT ĐƯỢC LƯU TRONG RAM NTN
+
+-Mỗi class được clone sang nằm trên ram (thông qua new) bao gồm 4 vùng nhớ:
+	-code segment: vùng nhớ chứa code được dịch sang nhị phân, để cho cpu biết nó cần làm gì
+	-heap: vùng nhớ xin thì sẽ cho
+	-stack: vùng nhớ không được xin, window quản lý
+	-data segment: vùng nhớ chứa global data nói chung
+
+=. Việc dùng chấm là để xem thông tin được lưu trữ trên vùng RAM
+=. public/ private quy định việc đứng ở ngoài nhìn được những thông tin gì.
+
+=. đối tượng ĐƯỢC CLONE sang và nằm trong vùng nhớ heap
+=. tên của đối tượng (tên biến ví dụ chiHu) nằm trong vùng nhớ stack, chứa tọa độ đến thông tin trong vùng nhớ heap => ĐƯỢC GỌI LÀ BIẾN CON TRỎ, BIẾN THAM CHIẾU
+=. new vừa clone sang vùng nhớ vừa ghi nhớ tọa độ của vùng nhớ đó và đưa vào biến con trỏ
