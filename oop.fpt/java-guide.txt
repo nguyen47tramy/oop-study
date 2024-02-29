@@ -1,3 +1,5 @@
+PHẦN MỘT: GIỚI THIỆU
+
 I. OBJECT
 
 -Biến, giá trị
@@ -71,3 +73,54 @@ VII. OBJECT ĐƯỢC LƯU TRONG RAM NTN
 =. đối tượng ĐƯỢC CLONE sang và nằm trong vùng nhớ heap
 =. tên của đối tượng (tên biến ví dụ chiHu) nằm trong vùng nhớ stack, chứa tọa độ đến thông tin trong vùng nhớ heap => ĐƯỢC GỌI LÀ BIẾN CON TRỎ, BIẾN THAM CHIẾU
 =. new vừa clone sang vùng nhớ vừa ghi nhớ tọa độ của vùng nhớ đó và đưa vào biến con trỏ
+
+KẾT LUẬN:
+1. BIẾN LÀ TÊN GỌI ĐẠI ĐIỆN CHO 1 GIÁ TRỊ ĐƠN GIẢN (PRIMITIVE) HOẶC PHỨC TẠP (COMPOSITE, COMPLEX, OBJECT).
+
+2. CÓ BIẾN LÀ CÓ VÙNG NHỚ ĐƯỢC CẤP TRONG RAM
+
+3. CÓ NEW LÀ CÓ VÙNG NHỚ MỚI ĐƯỢC CẤP TRONG RAM (vùng nhớ new chưa toàn bộ thông tin của object bao gồm đặc điểm và hành vi được CLONE từ CLASS. Toán tử new ...() trả về địa chỉ hay tọa độ vùng nhớ vừa tạo và gửi địa chỉ này cho  biến object hay biến con trỏ giữ giùm). 
+   CÓ THỂ CLONE KÈM THÊM MỘT LẦN (DUY NHẤT MỘT LẦN) VÙNG NHỚ STATIC DÙNG CHUNG
+
+4. BIẾN PRIMITIVE LƯU VALUE NGAY TRONG VÙNG NHỚ ĐƯỢC CẤP
+
+5. BIẾN OBJECT THAM CHIẾU TRỎ THẲNG VÀO VÙNG NEW ĐƯỢC CẤP (HAY VÙNG OBJECT)
+
+6. TIẾP CẬN ĐẾN VÙNG NEW ĐƯỢC CẤP THÔNG QUA BIẾN CON TRỎ(CHẤM)
+
+7. HÀM GẮN VỚI ĐỐI TƯỢNG/CLASS ĐỂ XỬ LÝ CHÍNH NHỮNG THÔNG TIN MÀ NÓ ĐANG CHỨA - ENCAPSULATION (ai có nhiều thông tin nhất kẻ đó nên xử lý thông tin này thay vì để kẻ khác)
+
+HỆ QUẢ:
+1. BIẾN PRIMITIVE CHỈ TỐN 1 VÙNG RAM (đây là vùng ram chứa luôn value cần lưu trữ, tên biến chính là value cần dùng, không chấm)
+
+2. BIẾN OBJECT TỐN HAI VÙNG RAM (một là vùng NEW - object chứa đặc tính và hành vi. hai là vùng chứa biến con trỏ trỏ đến vùng NEW. dùng value tại vùng NEW thông qua biến con trỏ (chấm). value của biến con trỏ chính là tọa độ của vùng NEW)
+
+3. BIẾN NÀO KHAI BÁO TRONG HÀM THÌ NẰM TRONG STACK-SEGMENT
+
+4. VÙNG NEW (HAY VÙNG VALUE OBJECT) NẰM TRONG HEAP-SEGMENT
+
+
+-------------------------------------------------------------------------------------------------------
+PHẦN HAI: BẮT TAY VÀO VIỆC
+
+TẠO MỘT CHƯƠNG TRÌNH:
+
+1. NHẬN DIỆN, MÔ TẢ ĐƯỢC CÁC OBJECT xuất hiện trong bài toán qua các đặc điểm (chính là biến và value-data) và hành vi/hành động xử lý trên các đặc điểm đó)
+
+2. NHẬN DIỆN GOM NHÓM OBJECT - CLASS, là những cụm object chia sẻ chung các đặc điểm, hành vi nổi bật khác với các Nhóm khác.
+
+3. TẠO MỚI PROJECT | TẠO MỚI CLASS, bắt buộc đặt ở một package/ ngăn tủ/kho nào đó
+
+4. TẠO KHOẢNG TRỐNG CHỪA CHỖ TRONG CLASS/KHUÔN. Khoảng trống chính là các đặc điểm của object trong tương lai sẽ được tạo ra hay đúc ra. nên để chúng là private.
+
+5. TẠO CONSTRUCTOR
+
+6. TẠO HÀNH ĐỘNG GET() SET(), cho phép xem/lấy và sửa/cập nhật thông tin - value của đối tượng đã được đúc (được new). 
+
+7. TẠO HÀM TOSTRING() để trả về/ show ra hết thông tin. có thể tùy ý chỉnh sửa lại hàm theo ý mình nhưng tuyệt đối không được đổi tên hamfvaf kiểu trả về.
+
+8. TẠO CÁC HÀM DÙNG ĐỂ XỬ LÝ CÁC THÔNG TIN MÀ OBJECT SỞ HỮU (HÀM TỰ TÔI)
+
+9. TẠO OBJECT qua main()
+
+ 

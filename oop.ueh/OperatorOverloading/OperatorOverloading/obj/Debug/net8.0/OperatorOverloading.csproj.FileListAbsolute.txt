@@ -1,0 +1,15 @@
+D:\oop-study\oop.ueh\OperatorOverloading\OperatorOverloading\bin\Debug\net8.0\OperatorOverloading.exe
+D:\oop-study\oop.ueh\OperatorOverloading\OperatorOverloading\bin\Debug\net8.0\OperatorOverloading.deps.json
+D:\oop-study\oop.ueh\OperatorOverloading\OperatorOverloading\bin\Debug\net8.0\OperatorOverloading.runtimeconfig.json
+D:\oop-study\oop.ueh\OperatorOverloading\OperatorOverloading\bin\Debug\net8.0\OperatorOverloading.dll
+D:\oop-study\oop.ueh\OperatorOverloading\OperatorOverloading\bin\Debug\net8.0\OperatorOverloading.pdb
+D:\oop-study\oop.ueh\OperatorOverloading\OperatorOverloading\obj\Debug\net8.0\OperatorOverloading.GeneratedMSBuildEditorConfig.editorconfig
+D:\oop-study\oop.ueh\OperatorOverloading\OperatorOverloading\obj\Debug\net8.0\OperatorOverloading.AssemblyInfoInputs.cache
+D:\oop-study\oop.ueh\OperatorOverloading\OperatorOverloading\obj\Debug\net8.0\OperatorOverloading.AssemblyInfo.cs
+D:\oop-study\oop.ueh\OperatorOverloading\OperatorOverloading\obj\Debug\net8.0\OperatorOverloading.csproj.CoreCompileInputs.cache
+D:\oop-study\oop.ueh\OperatorOverloading\OperatorOverloading\obj\Debug\net8.0\OperatorOverloading.sourcelink.json
+D:\oop-study\oop.ueh\OperatorOverloading\OperatorOverloading\obj\Debug\net8.0\OperatorOverloading.dll
+D:\oop-study\oop.ueh\OperatorOverloading\OperatorOverloading\obj\Debug\net8.0\refint\OperatorOverloading.dll
+D:\oop-study\oop.ueh\OperatorOverloading\OperatorOverloading\obj\Debug\net8.0\OperatorOverloading.pdb
+D:\oop-study\oop.ueh\OperatorOverloading\OperatorOverloading\obj\Debug\net8.0\OperatorOverloading.genruntimeconfig.cache
+D:\oop-study\oop.ueh\OperatorOverloading\OperatorOverloading\obj\Debug\net8.0\ref\OperatorOverloading.dll
