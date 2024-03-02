@@ -103,7 +103,7 @@ HỆ QUẢ:
 -------------------------------------------------------------------------------------------------------
 PHẦN HAI: BẮT TAY VÀO VIỆC
 
-TẠO MỘT CHƯƠNG TRÌNH:
+--TẠO MỘT CHƯƠNG TRÌNH:--
 
 1. NHẬN DIỆN, MÔ TẢ ĐƯỢC CÁC OBJECT xuất hiện trong bài toán qua các đặc điểm (chính là biến và value-data) và hành vi/hành động xử lý trên các đặc điểm đó)
 
@@ -124,3 +124,58 @@ TẠO MỘT CHƯƠNG TRÌNH:
 9. TẠO OBJECT qua main()
 
  
+--XỬ LÝ VIỆC NHẬP DỮ LIỆU TỪ BÀN PHÍM--
+--Session04-Essentials
+
+BỐN KIỂU NHẬP CỦA NGƯỜI DÙNG: 
+	- Nhập từ tế đúng yêu cầu
+	- Nhập ngoài biên (out of range), ngoài miền giá trị cần thiết ==> Xử lý bằng cách dùng IF (có thể kết hợp do-while() để yêu cầu người dùng nhập lại)
+	- Lệnh nhập bị trôi, lệnh lạc trôi ==> Xử lý bằng Skip getting a char/string
+	- Nhập cà chớn, không biết xử lý ra sao, không xài if được ==> Xử lý bằng cách dùng EXCEPTION
+
+XỬ LÝ LỆNH NHẬP BỊ TRÔI: <StudentProfile>
+Xảy ra khi nhập kí tự/chuỗi sau khi nhập số (lệnh nhập số trước lệnh nhập chữ/chuỗi)
+
+Nguyên nhân:	- Lệnh nhập số chỉ sử dụng đúng phần số trong buffer (bộ nhớ đệm nhập xuất), và để lại dấu cạc, kí tự khác, và enter trong buffer (gọi là rác buffer)
+Rõ hơn: 	- Bộ nhớ đệm nhập xuất buffer là bộ nhớ lưu các lệnh chờ được CPU xử lý, khi nhập input, dữ liệu được nhập từ bàn phím sẽ xuất hiện ở trong buffer chờ được thực thi (lưu vào biến trong ram)
+		- Khi nhập từ bàn phím vào bằng lệnh nextLine(), nó sẽ hốt sạch các lệnh có ở trong buffer
+		- khi nhập đến lệnh ENTER, có hai điều xảy ra, một là lệnh enter nó đi vào buffer, hai là cpu hiểu lệnh enter là một interuption để kết thúc việc nhập và bắt đầu gán (vào biến, lưu trữ trong ram)
+		- Lệnh nextLine() sẽ đưa tất cả có trong buffer (bao gồm cả enter) vào biến lưu (đã vứt bỏ enter), lúc này buffer không còn gì
+		- Nếu lệnh sau đó là lệnh nhập số nextInt(), thì nextInt() sau khi nhấn enter sẽ chỉ lấy toàn bộ số nguyên có trong buffer, không lấy enter và các kí tự chuỗi sau dấu cách phân chia biến ==> lệnh nextLine() ngay sau sẽ đọc trong buffer, gặp enter thì sẽ interup và lưu toàn bộ vào biến tiếp theo 
+		- Do đó nếu tại nextInt() đằng trước có nhập chữ sau dấu cách thì sẽ không được lấy bởi nextInt() mà để lại phần chữ trong buffer. => được gọi là rác trong buffer (Dấu cách trong lập trình để phân tách các phần value được gán vào các biến sau đó, mỗi biến nào đến lượt thì lấy.)
+
+=>>nextLine() lấy enter khỏi buffer còn nextInt() thì chỉ lấy biến int đầu cho đến dấu cách trong buffer ( để lại enter và các chuỗi kí tự khác nếu có trong buffer) =>> nextInt() để lại rác trong buffer
+
+Cách giải quyết là: Xóa bộ đệm nếu sau khi sử dụng nextInt() cần dùng nextLine() (nhập kí tự/chuỗi sau khi nhập số) (có nhiềuuu cách, có một vài lưu ý và cách như sau)
+	- Java không có lệnh xóa bộ đệm: khác với C và có thể là một số ngôn ngữ lập trình khác, Java không hỗ trợ lệnh xóa bộ nhớ đệm.
+	- Cách 1: Có thể dùng nextLine() để clear bộ nhớ đệm: dùng lệnh nextLine()để lấy nốt dữ liệu cho đến enter nhưng không gán giá trị đó vào đâu hết sau lệnh nextInt()
+	- Cách 2: Sử dụng hàm viết sẵn của Java để parse toàn bỘ dữ liệu được đọc trong buffer thành kiểu số nguyên bằng Integer(chấm) Integer.parseInt(scanner.nextLine())
+
+XỬ LÝ LỆNH NHẬP CÀ CHỚN <Samurai>
+Xảy ra khi người dùng nhập không theo đúng yêu cầu, ví dụ yêu cầu nhập số, người dùng nhập cả số lẫn chữ không cách. Phân biệt với trường hợp yêu cầu nhập chữ và người dùng nhập số không đúng yêu cầu, trường hợp này thì dùng if (hợp định dạng nhưng ngoài biên)
+
+Nguyên nhân dẫn đến app bị JVM giết:
+	- Convert data không thành công ( ví dụ convert từ chuỗi thành số)
+	- Trường hợp chia cho 0 (mà không chặn số chia qua IF)
+	- Đi quá số phần tử của mảng (out of bound, ví dụ trong ngôn ngữ java, số phần tử cao nhất của mảng là 51, nếu tạo mảng vượt quá 51 phần tử app sẽ bị giết)
+	- Null Pointer - pointer là biến con trỏ tham chiếu (tên biến object)
+	- Kết nối qua mạng, truyền dữ liệu qua mạng, sever bị ngắt cũng sẽ giết app giữa chừng
+
+Cách giải quyết là sử dụng try-catch
+try{
+	//lệnh có thể gây nên app bị giết do những nguyên nhân ở trên
+} catch (Exception e){
+	//cách lệnh CPU chạy khi có nguyên nhân e xảy ra
+}
+
+CỤ thể:	- Cách 1: Cho giá trị mặc định
+	- Cách 2: Cho người dùng nhập lại (do- while) lặp vô tận
+		while ( điều gì luôn đúng){
+			try {
+				//lệnh thực hiện
+				break;	//thoát ra ở đây nếu lệnh được thực hiện trôi chảy
+			} catch (Exception e ){
+				//lệnh thông báo nhập sai
+			}
+		lặp lại vì điều kiện luôn đúng
+		}
