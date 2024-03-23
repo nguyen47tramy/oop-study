@@ -170,7 +170,7 @@ try{
 
 CỤ thể:	- Cách 1: Cho giá trị mặc định
 	- Cách 2: Cho người dùng nhập lại (do- while) lặp vô tận
-		while ( điều gì luôn đúng){
+		while ( điều gì luôn đúng){ //while (true)
 			try {
 				//lệnh thực hiện
 				break;	//thoát ra ở đây nếu lệnh được thực hiện trôi chảy
@@ -179,3 +179,9 @@ CỤ thể:	- Cách 1: Cho giá trị mặc định
 			}
 		lặp lại vì điều kiện luôn đúng
 		}
+
+--TẠO THƯ VIỆN ĐỒ DÙNG NHIỀU TRONG CHƯƠNG TRÌNH BẰNG STATIC (UTILity PACKAGE)-- <MyToys>
+
+Chú ý: khi tạo mới project, IDE thường sẽ lấy luôn tên class để tạo hàm main, để có độc lập thì nên tạo khuôn ở một nơi và đúc ở một nơi ==> util không create main class (tự viết main class để test)  
+
+#	psvm ==> phím tắt tạo hàm main

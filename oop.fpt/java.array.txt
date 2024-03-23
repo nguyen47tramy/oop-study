@@ -1,0 +1,18 @@
+PRIMITIVE ARRAY
+
+Mảng trong C: 
+	- bao gồm mảng tĩnh và mảng động (static (!khác khái niệm static trong java) and dynamic)
+	- static nằm trên vùng stack
+	- dynamic nằm trôi nổi trên heap
+
+Mảng trong Java tương đương kiểu cấp phát động
+	- Mảng là kỹ thuật khai báo nhiều biến, mỗi biến là một phần tử mà những ptu này sẽ ứng với những value sau đó (biến sẽ ứng với value sau đó)
+	- Mảng là kỹ thuật khai báo nhiều biến cùng lúc, cùng kiểu, CÙNG TÊN ở sát nhau trong ram
+	- Khi các biến trùng tên, phải có cách để phân biệt biến này với biến kia => dùng tên phụ: phân biệt bằng index (số chỉ mục, chỉ số)
+
+Hệ quả:
+	- Khai báo biến nhanh hơn nhưng tên biến phức tạp hơn, đi kèm index
+	- Sử dụng mảng thì sử dụng LOOP (do, while, for)
+
+=> 	- Khi nào có những biến liên quan cùng kiểu thì nên dùng mảng 
+  

@@ -1,0 +1,15 @@
+D:\oop-study\oop.ueh\DelegationCompare\DelegationCompare\bin\Debug\net8.0\DelegationCompare.exe
+D:\oop-study\oop.ueh\DelegationCompare\DelegationCompare\bin\Debug\net8.0\DelegationCompare.deps.json
+D:\oop-study\oop.ueh\DelegationCompare\DelegationCompare\bin\Debug\net8.0\DelegationCompare.runtimeconfig.json
+D:\oop-study\oop.ueh\DelegationCompare\DelegationCompare\bin\Debug\net8.0\DelegationCompare.dll
+D:\oop-study\oop.ueh\DelegationCompare\DelegationCompare\bin\Debug\net8.0\DelegationCompare.pdb
+D:\oop-study\oop.ueh\DelegationCompare\DelegationCompare\obj\Debug\net8.0\DelegationCompare.GeneratedMSBuildEditorConfig.editorconfig
+D:\oop-study\oop.ueh\DelegationCompare\DelegationCompare\obj\Debug\net8.0\DelegationCompare.AssemblyInfoInputs.cache
+D:\oop-study\oop.ueh\DelegationCompare\DelegationCompare\obj\Debug\net8.0\DelegationCompare.AssemblyInfo.cs
+D:\oop-study\oop.ueh\DelegationCompare\DelegationCompare\obj\Debug\net8.0\DelegationCompare.csproj.CoreCompileInputs.cache
+D:\oop-study\oop.ueh\DelegationCompare\DelegationCompare\obj\Debug\net8.0\DelegationCompare.sourcelink.json
+D:\oop-study\oop.ueh\DelegationCompare\DelegationCompare\obj\Debug\net8.0\DelegationCompare.dll
+D:\oop-study\oop.ueh\DelegationCompare\DelegationCompare\obj\Debug\net8.0\refint\DelegationCompare.dll
+D:\oop-study\oop.ueh\DelegationCompare\DelegationCompare\obj\Debug\net8.0\DelegationCompare.pdb
+D:\oop-study\oop.ueh\DelegationCompare\DelegationCompare\obj\Debug\net8.0\DelegationCompare.genruntimeconfig.cache
+D:\oop-study\oop.ueh\DelegationCompare\DelegationCompare\obj\Debug\net8.0\ref\DelegationCompare.dll
