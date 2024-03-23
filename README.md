@@ -1,6 +1,6 @@
-# Hello this is my OOP STUDY project
+# Hello this is my OOP STUDY repo
 
-This project contains ALL the resources learned in UEH (the school I go to - with C#) and FPT (https://youtube.com/playlist?list=PLayYhLZuuO9ty9YiCDekVpCh_4V7NzO4C&si=1A_eupB59DGilXL8 online series by giao.lang - with Java) and potentially many more (frm the internet).
+This repo contains ALL the resources learned in UEH (the school I go to - with C#) and FPT (https://youtube.com/playlist?list=PLayYhLZuuO9ty9YiCDekVpCh_4V7NzO4C&si=1A_eupB59DGilXL8 online series by giao.lang - with Java) and potentially many more (frm the internet).
 
 ## You will find in this repo:
 
