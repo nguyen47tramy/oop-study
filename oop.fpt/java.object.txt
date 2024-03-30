@@ -185,3 +185,24 @@ CỤ thể:	- Cách 1: Cho giá trị mặc định
 Chú ý: khi tạo mới project, IDE thường sẽ lấy luôn tên class để tạo hàm main, để có độc lập thì nên tạo khuôn ở một nơi và đúc ở một nơi ==> util không create main class (tự viết main class để test)  
 
 #	psvm ==> phím tắt tạo hàm main
+
+---------------------------------------------------
+--THÙNG CHỨA OOP
+---------------------------------------------------
+
+Có những đối tượng bên trong chứa nhiều đối tượng khác nữa
+==> Đối tượng chứa đối tượng (thông qua mảng)
+ví dụ tủ chứa mảng các mốn đồ
+
+tủ A => chứa nhiều sách	[]
+tủ B => chứa nhiều hồ sơ []
+tủ C => chứa nhiều đồ lưu niệm []
+
+==> nhóm Cái-Tủ, Thùng-Chứa, Container, Cabinet, Shelf
+
+danh sách các thí sinh dự thi cũng phải là một mảng các thí sinh dự thi
+=> từ một đống các object là thí sinh sẽ là đặc điểm của các object lớn hơn là tờ giấy thi, có nhiều tờ giấy thi như thế.
+
+ĐỐI TƯỢNG CÁI-TỦ, NHÓM CÁI-TỦ, CLASS CÁI TỦ CÓ ĐẶC ĐIỂM LÀ CHỨA NHIỀU MÓN ĐỒ, MẲNG MÓN ĐỒ
+==> Ai có nhiều dữ liệu người đó nên xử lý => thêm/xóa/sửa objetc đồ thì được viết trong class cái tủ để cái tủ xử lý
+

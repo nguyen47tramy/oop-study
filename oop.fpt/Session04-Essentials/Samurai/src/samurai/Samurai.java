@@ -16,7 +16,7 @@ public class Samurai {
         Scanner scan = new Scanner(System.in);
 
         //Mặc định JVM J sẽ giết app nếu có cà choén xảy ra để đảm bảo an toàn cho app
-        //đưa ra cơ chết tự xử khi có cà chơn, chuyển quyền giết chóc cho mình
+        //đưa ra cơ chế tự xử khi có cà chơn, chuyển quyền giết chóc cho mình
         //=> Cần phải báo cho JVM biết đừng giết, để app tự xử lý, nhốt các lệnh cà chớn lại, đưa vào trong SANDBOX
         System.out.print("Input name: ");
         name = scan.nextLine().toUpperCase();
