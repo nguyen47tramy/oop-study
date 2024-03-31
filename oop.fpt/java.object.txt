@@ -206,3 +206,4 @@ danh sách các thí sinh dự thi cũng phải là một mảng các thí sinh 
 ĐỐI TƯỢNG CÁI-TỦ, NHÓM CÁI-TỦ, CLASS CÁI TỦ CÓ ĐẶC ĐIỂM LÀ CHỨA NHIỀU MÓN ĐỒ, MẲNG MÓN ĐỒ
 ==> Ai có nhiều dữ liệu người đó nên xử lý => thêm/xóa/sửa objetc đồ thì được viết trong class cái tủ để cái tủ xử lý
 
+Đối tượng luôn bao gồm đặc tính (biến -value) và hành vi. Có những đối tượng ngoài đặc tính bình thường còn có đặc tính quan trọng, đặc tính chứa nhiều thông tin khác (các đối tượng khác). Và để chứa nhiều thông tin thì thay vì khai báo từng biến lẻ một ta khai báo mảng. ==> MẢNG LÀ MỘT ĐẶC TÍNH CỦA MỘT OBJETC KHÁC ==> ĐÂY LÀ TƯ DUY ĐỐI TƯỢNG
