@@ -1,0 +1,16 @@
+- Object mà đi đến được cái Class là một mức nhận thức, thiết kế => (khi làm nhiều object thì phải nghĩ đến việc làm khuôn để nhân bản cho nhanh)
+
+- Giữa các khuôn, Class với nhau lại thấy cũng có điểm tương đồng mặc dù nó là hai khuôn khác nhau rõ ràng
+
+- Còn có một khái niệm gọi là "Đứng trên vai người khổng lồ" hoặc "Đừng làm lại cái bánh xe" hoặc "Phiên bản đặc biệt, bản limited, bản độ" ==> tức muốn nói đã có cái gì sẵn rồi, hãy phát huy nó cho hay hơn, hàm ý đã có ai đó dọn đường cho mình rồi và ta đi tiếp ==> KẾ THỪA CÁI CÓ SẴN, LÀM TIẾP CÁI MỚI
+
+- NGẦM HIỂU CÂU CHUYỆN TỪ CÁI CÓ SẴN, TA LÀM RA CÁI MỚI, PHIÊN BẢN MỚI TỪ CÁI CŨ (tức là có một cái nền để đi tiếp - cần cái có sẵn)
+
+- Trong quá trình chế tạo đồ đạc, ta cũng chế tạo cái mới từ những đồ đạc cũ để cho ra sản phẩm nhanh
+
+- Nhìn cao hơn, muốn có object ta cần khuôn X, nhưng ta lại phát hiện khuôn X làm từ đầu thì mất công quá, ta độ lại từ khuôn Y. TỨC KHUÔN X LÀ BẢN ĐIỀU CHỈNH CỦA KHUÔN Y (có nguồn gốc, có dính dáng, tương thích, có thể dùng lại đồ của nhau)
+
+- Để giải quyết câu chuyện KẾ THỪA, ta phải nhìn giữa các khuôn xem NÓ CÓ LÀ (IS IT A...) phiên bản của khuôn khác (MỘT CHIỀU, KHÔNG CÓ CHIỀU NGƯỢC LẠI) không.
+
+- Mục tiêu quan trọng của kế thừa là không phải viết lại code.
+ 
