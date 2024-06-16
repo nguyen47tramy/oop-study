@@ -3,7 +3,9 @@ package bena;
 
 import java.util.Scanner;
 import data.Rectangle;
+import data.RightTriangle;
 import data.Square;
+import data.Triangle;
 
 public class BeNa {
 
@@ -11,7 +13,8 @@ public class BeNa {
         //Square s1 = new Square(4, "red", inputMessage());
         //System.out.println(s1.toString());
         
-        playWithSquare();
+        //playWithSquare();
+        playWithTriangle();
         
     }
     
@@ -51,4 +54,24 @@ public class BeNa {
                     //chạy override của lớp con
         
     }
+    
+    public static void playWithTriangle(){
+        Triangle t1 = new Triangle(3, 4, 5, "pink", "hey");
+        t1.paint();
+        
+        RightTriangle rt1 = new RightTriangle(3, 4, "pinku", "its work!");
+        rt1.paint();
+        
+        //Khai báo Cha, new Con(..)
+        Triangle rt2 = new RightTriangle(6, 8, "pinku", "its work!");
+        rt2.paint();
+        //tức là sao:
+        //rt1 là một right triangle, khi rt1. là đang gọi paint của right triangle
+        //rt2 là một triangle, khi rt2. là đang dùng danh nghĩa triangle để gọi
+        //tuy nhiên vì right triangle extends triangle nên chương trình ưu tiên gọi paint của con vì new Con(..)
+        //hiện tượng @Override, cha bị qua mặt
+        //tính đa hình
+    }
+    
+    
 }

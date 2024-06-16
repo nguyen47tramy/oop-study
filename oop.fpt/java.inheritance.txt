@@ -1,6 +1,9 @@
+-------------------------------------
+1. KẾ THỪA LÀ GÌ? TỔNG QUAN VỀ KẾ THỪA
+
 - Object mà đi đến được cái Class là một mức nhận thức, thiết kế => (khi làm nhiều object thì phải nghĩ đến việc làm khuôn để nhân bản cho nhanh)
 
-- Giữa các khuôn, Class với nhau lại thấy cũng có điểm tương đồng mặc dù nó là hai khuôn khác nhau rõ ràng
+- Giữa các khuôn/Class với nhau lại thấy cũng có điểm tương đồng mặc dù nó là hai khuôn khác nhau rõ ràng
 
 - Còn có một khái niệm gọi là "Đứng trên vai người khổng lồ" hoặc "Đừng làm lại cái bánh xe" hoặc "Phiên bản đặc biệt, bản limited, bản độ" ==> tức muốn nói đã có cái gì sẵn rồi, hãy phát huy nó cho hay hơn, hàm ý đã có ai đó dọn đường cho mình rồi và ta đi tiếp ==> KẾ THỪA CÁI CÓ SẴN, LÀM TIẾP CÁI MỚI
 
@@ -13,4 +16,38 @@
 - Để giải quyết câu chuyện KẾ THỪA, ta phải nhìn giữa các khuôn xem NÓ CÓ LÀ (IS IT A...) phiên bản của khuôn khác (MỘT CHIỀU, KHÔNG CÓ CHIỀU NGƯỢC LẠI) không.
 
 - Mục tiêu quan trọng của kế thừa là không phải viết lại code.
+
+- Các level của kỹ thuật lập trình oop:
+  - Level 1: class/khuôn công nghiệp để làm nhanh object (các object có cùng đặc tính)
+  - Level 2: tạo class/khuôn kế thừa từ các khuôn có sẵn để làm nhanh hơn nữa. Tại level này thì phải giải quyết vấn đề uhm khuôn mới, is it a kind of khuôn cũ? 
+  <is catholic Christian?>đúng 
+  <is Christian catholic?>sai
+  <=> class Catholic kế thừa class christian>
+
+-----------------------------------------
+2. DATA KHI THỰC HIỆN KẾ THỪA ĐƯỢC LƯU TRỮ TRÊN RAM NHƯ THẾ NÀO?
+
+(trong class diagram thì kế thừa được diễn tả bằng mũi tên tam giác rỗng từ class con đến class cha.
+access modifier của đặc tính/ field/ thuộc tính: protected được ký hiệu bằng dấu thăng #, private được ký hiệu bằng dấu trừ -, public được ký hiệu bằng dấu cộng +, default được ký hiệu bằng dấu ngã ~)
+
+CÁC TRƯỜNG HỢP NEW:
+- Khai báo Cha, new Cha(..) //nếu Cha cụ thể tức ủ code, không abtract
+- Khai báo Con, new Con(..) //đó giờ sử dung, class Student new Student(..)
+- Khai báo Cha, new Con(..) //kế thừa, nhờ kỹ thuật DRIFT ép kiểu
+- Khai báo Cha, new Cha(..) //Cha là abtract
  
+KHI NEW CON(..) SUPER (..)
+
+- new Con(..) super Cha(..) nghĩa là cắt hình vuông từ hình chữ nhật, tức chương trình sẽ phải clone khuôn Cha(..) rồi mở rộng thêm vùng ram để chứa thêm data của Con(..). Tất cả các vùng ram đó được gọi là vùng ram dung để clone khuôn Con(..)
+
+- Trong Con(..) có: Cha(..) + phần của Con(..) phía sau
+
+BIẾN CON TRỎ (BIẾN ĐỊA CHỈ VÙNG NHỚ)
+
+- Khi thực hiện Khai báo Con, new Con(..), biến con trỏ sẻ trỏ tới đáy ram của Con
+
+- Khai báo Cha, new Con(..) biến con trỏ chỉ trỏ tới đáy ram của vùng Cha, nhưng khi chạy chương trình thì ảnh hưởng @Override nên chương trình sẽ chạy hàm @override nếu có (mạnh dạn đoán nếu class Con có hàm mới mà không có trong lớp Cha thì không thể khai báo kiểu này)
+
+- Con dung được tất cả những gì Cha có, cha có thêm, con có thêm; cha bớt, con bị bớt -- Đây gọi là kế thừa/di truyền/ cho con - inherit
+
+- Biến dị/ Con khác, Con có thêm hàm mới nhưng không phải override ==> giải quyết việc con trỏ sẻ trỏ vào đâu nếu con có đột biến.

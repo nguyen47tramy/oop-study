@@ -17,24 +17,25 @@ package data;
 //=>> Hình vuông cùng phải hành xử như hình chữ nhật
 
 //1!!. Khi chơi với kế thừa, cần phải tôn trọng constructor gốc của con
-// vuông vẫn cần phễu, nhunwg lúc này phễu nó sẽ chảy thẳng lên cha
+// vuông vẫn cần phễu, nhưng lúc này phễu nó sẽ chảy thẳng lên cha
 //dữ liệu của vuông chính là dữ liệu của chữ nhật
 
 //2!!. Nhân tử chung
 //3!!.
 
-public class Square extends Rectangle{
+public class Square extends Rectangle{ //khai báo class square là class con của rectangle
     
     // không cần làm lại những gì hcn đã có
-    // tức không cần field
-    public Square(double edge, String color, String message) {
-        super(edge, edge, color, message);
-        //DUNG HÒA CHA CON
-        //HÌNH VUÔNG CÓ CẠNH EDGE CHÍNH LÀ HÌNH CHỮ NHẬT CÓ CANH EDGE, EDGE
+    // trong trường hợp này không cần khai báo thêm field, đi luôn vào constructor
+    public Square(double edge, String color, String message) { //tạo phễu cho hình vuông như bình thường
+                                                         //chưa cần chú ý đến việc nó là class con
+        super(edge, edge, color, message); // đây là dòng DUNG HÒA CHA CON, cho chương trình hiểu
+        //HÌNH VUÔNG CÓ CẠNH EDGE CHÍNH LÀ HÌNH CHỮ NHẬT CÓ CHIỀU RỘNG LÀ EDGE, CHIỀU DÀI LÀ EDGE
     }   
-    //super chính là new Rectangle(....)
-    //câu này chính là đổ vật liệu lên cho cha giữ về mình không chứa lại những cái này
-    //new Square() chính là new Rectangle() chính là cắt hcn ở ngoài đời
+    //super chính là new Rectangle(....), khi new square(..) chính là nói với chương trình new rectangle(..) đi,
+    //dùng số liệu nhận được khi new square(..) kìa.
+    //câu này chính là đổ vật liệu lên cho cha giữ chứ bản thân mình không chứa lại những cái này
+    //new Square() chính là new Rectangle(). chính là việc cắt hình vuông ở ngoài đời từ một hình chữ nhật 
     
     
     //độ lại paint()
