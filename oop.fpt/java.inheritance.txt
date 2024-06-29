@@ -48,6 +48,60 @@ BIẾN CON TRỎ (BIẾN ĐỊA CHỈ VÙNG NHỚ)
 
 - Khai báo Cha, new Con(..) biến con trỏ chỉ trỏ tới đáy ram của vùng Cha, nhưng khi chạy chương trình thì ảnh hưởng @Override nên chương trình sẽ chạy hàm @override nếu có (mạnh dạn đoán nếu class Con có hàm mới mà không có trong lớp Cha thì không thể khai báo kiểu này)
 
-- Con dung được tất cả những gì Cha có, cha có thêm, con có thêm; cha bớt, con bị bớt -- Đây gọi là kế thừa/di truyền/ cho con - inherit
+- Con dùng được tất cả những gì Cha có, cha có thêm, con có thêm; cha bớt, con bị bớt -- Đây gọi là kế thừa/di truyền/ cho con - inherit. 
 
 - Biến dị/ Con khác, Con có thêm hàm mới nhưng không phải override ==> giải quyết việc con trỏ sẻ trỏ vào đâu nếu con có đột biến.
+
+-Vùng nhớ của Con to/bao trùm vùng nhớ của Cha: con thừa hưởng tất cả đồ của Cha, trong vùng new có cái gì thì được xài cái đó. Cha là base/móng nhà để Con thoải mái vùng vẫy, mở rộng thêm (extends) 
+
+- Vùng nhớ Con  =  vùng nhớ Cha   + extends
+                     super(..)      [di truyền - @Override]
+                                    [biến dị - mới]
+
+- Thứ tự câu lệnh trong constructor bắt buộc phải super trước: Vì phải biết được Cha xài bao nhiêu ram trước, sau đó mởi mở rộng them vựng ram cho Con. nếu ngược lại thì java không biết cần phải chừa bao nhiêu vựng ram để chứa vùng clone từ Cha.
+
+---------------------
+3.1 KẾ THỪA LEVEL 1: CHA CỤ THỂ, CON CỤ THỂ (CONCRETE)
+
+Tức là Cha và Con có đầy đủ code để chạy
+
+3.2 KẾ THỪA LEVEL 2: KHÓ HƠN, CHA TRÌU TƯỢNG(CHỨA HÀM ABSTRACT), CON CỤ THỂ
+
+- Để chế tạo nhiều các khuôn khác nhau một các nhanh  hơn, ta có ý tưởng về làm một khuôn tổ, từ đó đẻ ra các khuôn con khác nhau. Sau đó có thể để các object chế tạo từ các khuôn khác nhau này chung mảng, sắp xếp chúng.
+
+=> Một khuôn cho mọi khuôn
+
+- khi hàm cha không đủ code thì nó không hoàn chỉnh, nó vẫn có quyền có hàm khác mà có code ví dụ như get set
+
+- Về mặt lý thuyết, khi new asbtract class thì khi chấm hàm không code sẽ không có code để chạy ==> không new class có hàm abstract vì không có đủ code/ không hoàn thiện để chạy TRỪ KHI VẪN NEW THÌ...
+
+- Nếu nó có con, thì CON có hai phương án abstract luôn(vô sinh luôn, không new) hoặc phải implement đấy đủ code (@override)
+
+VUNGF NEW CỦA CON/ CÙNG NHỚ CỦA CHA sẽ bao gồm vựng nhớ của cha và phần mở rộng/ extends để chứa phần dị biệt hoàn toàn của con bao gồm cả hàm và biến
+-----------------------
+4. ANNONYMOURS CLASS
+
+VẤN ĐỀ: Liên quan đến Shape/Hình học, ta có nhứng hình biết rõ nhóm con như Vuông, Trong, Tam giác,.. và thuộc nhóm cha
+Tuy nhiên có những hình chỉ biết nó là hình, không biết tên gọi nhóm con, nhưng vẫn thuộc Shape, vẫn có đặc dính màu sắc, màu đường viền, vẫn có diện tích và chu vi.
+==> Có xuất hiện những đối tượng lạc loài, không hinh dạng quen thuộc
+== DÙNG KỸ THUẬT MƯỢT GIÓ BẺ MĂNG, MƯỢN SHAPE(abstract) TẠO OBJECt vì thiếu cái khuôn con cụ thể (full code)
+Công thức:
+CON = NEW CHA/SUPER CHA + EXTENDS @OVERRIDE
+Cách: 
+NEW CHA + CODE @ THÌ VẪN ĐẢM BẢO CÔNG THỨC THỨC 
+==> Tạo object mà không cần class riêng, mượn cha mà làm, THÌ class riêng mà không cần đề cập gọi là class làm being/ class không cần tạo ra/ class không themf làm cụ thể ra/ class ẩn danh. class anonymous
+
+VẪN NEW ĐƯỢC OBJECT CON CỦA SHAPE MÀ KHÔNG CẦN MỘT CLASS CON CỤ THỂ, VẬY THÌ VÙNG RAM CON NÀY CHÍNH LÀ ĐẠI DIỆN CHO 1 CLASS LÀM BIẾNG/ ĐẶT TÊN, CLASS ẨN DANH - TẠO OBJECT ON THE GO
+
+- Không chỉ đinh rõ tên class con mà vẫn có object con.
+
+- Ví dụ trên: vì là hình độc đáo duy nhất, không thể dung khuôn rời => ta sẽ chế khuôn nhanh theo Shape, ăn ké Shape mà new trực tiếp => trả ra S và P hard-code 
+Chỉ xài cách này nếu chỉ cần làm một object on the go (chú ý là object vẫn dùng lại được vì vẫn có tên biến, không muốn dung lại thì mới không cần đặt tên
+
+==> lợi - vẫn thỏa công thức vựng nhớ cha nằm trong vùng nhớ con (làm biếng đặt tên)
+	
+==>  hại - phải làm theo constructor của cha, không độ lại constructor được như làm class con new.
+         - không thể nhân bản/clone được, mỗi lần muốn làm thì phải new một vùng nhớ mới
+
+- Giải quyết Khai Cha new Cha(..) khi Cha abstract - mượn  gió bé măng, viết code on the go
+- Hiện tượng Anonymous class, vùng ram vẫn lớn như vùng ram của các class con, chỉ khác là nó không có tên, không nhân bản được.// phân biệt với Anonymous object sinh ra một lần rồi chết do garbage collector của jvm dọn khi chạy chương trình.
