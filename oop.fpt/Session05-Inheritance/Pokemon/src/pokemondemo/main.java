@@ -4,6 +4,7 @@ package pokemondemo;
 //Lưu thông tin những con main này kiểu gì?
 
 import data.*;
+import java.util.Random;
 
 
 //Nếu muốn sort dựa trên tốc độ chạy thì như thế nào.
@@ -46,13 +47,34 @@ public class main {
     
     public static void test(){
         
+        //anonymous class 
+        Pokemon ufo = new Pokemon("TraMy", 1000, "Grass", "Human pokemon", 1.58) {
+            @Override
+            public int run() {
+                speed = new Random().nextInt(10);
+                return speed;
+            }
+            
+            @Override
+            public String speak() {
+                return "Yeeeeee";
+            }
+            
+            @Override
+            public void showRecord() {
+                System.out.printf("|%-10s|%-4d|%-10s|%-15s|%-7d|\n",
+                name, nationalNumber, type, species, speed );
+            }
+        };
+        
         Pokemon pasture[] = new Pokemon[] {
                         new Pichu("Pichu", 98, "Electric", "Tiny Mouse Pokemon", 0.3, true),
                         new Pichu("Pichu", 98, "Electric", "Tiny Mouse Pokemon", 0.3, false),
                         new Pikachu("Pikachu", 99, "Electric", "Mouse Pokemon", 0.6, true),
                         new Pikachu("Pikachu", 99, "Electric", "Mouse Pokemon", 0.66, true),
                         new Raichu("Raichu", 100, "Electric", "Mouse Pokemon", 0.44, true),
-                        new Raichu("Raichu", 100, "Electric", "Mouse Pokemon", 0.54, true)
+                        new Raichu("Raichu", 100, "Electric", "Mouse Pokemon", 0.54, true),
+                        ufo
                         };
         
         //let get them run

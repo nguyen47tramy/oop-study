@@ -1,0 +1,151 @@
+LÀM VIỆC VỚI NHIỀU OBJECTS/DATA
+(Làm sao để lưu trữ, xử lý nhiều object cùng loại (kế thừa - abstraction/ interface. các object cùng kind hoặc cùng là member) 
+Về bản chất là cần cái giỏ, tủ, balo, phòng,.. đựng đồ. Mua cái túi, mua cái tủ, xây cái phòng chính là new cái túi(), new cái tủ(), new căn phòng().
+Phải có một thùng chứa that ược tạo raể ta bỏ đồ vào, do đó phải new cái thùng chứa, new để có vựng ram để lưu trữ info + hàm xử lý info theo encapsulation.
+OBJECT TRONG RAM TƯƠNG ƯƠNG MÓN ĐỒ THẬT  NGOÀI ĐỜI. ví dụ điện thoại trên tay có màu sắc, giá tiền, hành động gọi Nghe, chụp ảnh,... Bnaj phải mua về, nhà sản xuất phải tạo ra, new ra thì mới cóể dùng ==> trìu tượng hóa mónồ that thành object trong lập trình thì cũng cần new để có vựng ram có data + hành động
+==> MUA TỦ ĐỰNG NHIỀU ĐỒ TA CẦN NEW TỦ(), CÓ KHÔNG GIAN ĐỰNG ĐỒ VÀ CÁC HÀNH ĐỘNG TƯƠNG ỨNG.
+
+===================
+CÚ PHÁP
+
+TỦ tuCuaTui = new TỦ();  //Trong RAM sẽ có một vựng không gian để đựng đồ
+//Ngoài  thì cái tủ sẽ chiếm một góc phòng để ta đựng đồ. 
+
+Cái tủ cho mình làm gì thì mình làm đó => Nguyên tắc của Encapsulation/ abstraction. Tức nếu mình mua cái tivi thì chỉ có thể xem cab truyền hình chứ không thể duyệt web, không thể nướng thịt.
+Đóng gói hànhộng đi kèm object.
+
+tuCuaTui.addDoVao(mónồ muốn đưa vào); //tủ cho phép mình bỏ đồ vô.
+
+Giong lò nướng, ta bỏ con gà vào để nướng
+LoNuong loCuaTui = new LoNuong(); //mua lò về, chiếm góc bếp
+
+loCuaTui.addDoNuong(con gà);
+
+NHƯ VẬY: 
+TỦ LÀ OBJETCT CHỨA NHIỀU ĐỒ ĐẠC KHÁC
+1. MUA TỦ          - new TỦ()
+2.1 MUA ĐỒ         - new DỒ()
+2.2 ADD VÔ TỦ      - .addDO()
+
+===================
+CÓ HAI CÁCH, HAI LOẠI TỦ:
+MỘT LÀ DÙNG ARRAY - MẢNG. TỦ LOẠI 1 (kích thước cố định, là danh sacsh các tọa độ. mảng tỏng java gồm mảng primitive và mảng object. Sắp xếp tỏng mảng là đỏi chỗ trỏ/vựng khong gian trỏ)
+Giống xe  tô chở khách cố định chỗ ngồi [16 chỗ], rạp phim/ phòng chiếu [100 ghế] 
+
+Student arr[] = new Student[100];
+//sẽ có 100 chỗ ngồi cho sv, chưa có ai cụ thể
+//arr chính là biến má mì, tên gọi tắt cho một cái tủ có 100 chỗ
+//tên mảng chính là tên gọi cho một cái Tủ fix số chỗ
+//vì nó trỏ đến new [số chỗ]
+
+//bỏ đồ vào mảng thì không cần dùng hàm/hamhf ộng của tủ, cho sờ trực tiếp chỗ để
+arr[0] = món đồ bỏ vô/ new Món đồ bỏ vô;
+//tương đương tuCuaTui.add(món đồ); 
+//tuCuaTui tại vị trí 0 được cất món đồ
+//Mónồ new nằm trong Heap, nằm bên ngoài tủ, chỉ lưu danh sách tham chiếu  5:24
+
+HAI LÀ DÙNG CLLECTIONS FRAMEWORK - TỦ LOẠI 2 (một dạng mảng linh hoạt hơn trong việc xin dung lượng lưu trữ các biến con trỏ)
+- CO GIÃN SỐ ĐỒ ĐỂ VÔ, THOẢI MÁI ĐỂ VÔ ĐỒ, CẦN THÊM CHỖ, CÓ THÊM CHỖ MÀ KHÔNG CẦN XIN, CỨ ĐỂ ĐỒ VÔ LÀ THÊM CHỖ, GIỐNG NỒI CƠM THẠCH SANH, GIỐNG GIẾNG KHƠI, MÚC LÀ LẠI CÓ NƯỚC
+
+- ĐÓ LÀ 
+|  ArrayList, Vector   |
+|  HashSet,   TreeSet  |
+|  HashMap,   TreeMap  |
+
+ban  không có chỗ nào cả, không đáy, cứ nhét đồ vô là them chỗ
+không sờ [i] vào vị trí chỗ
+xin chỗ qua day kéo, khóa, ngăn, cánh cửa, mở ra nhét đồ vô
+
+tuCuaTui[i] = món đồ bỏ vô ---> Mảng
+tuCuaTui.add(món đồ bỏ vô) ---> Collections Framework, bỏ đồ vô qua hành động của tủ, không sờ trực tiếp qua ngăn chứ thứ [i]
+
+-> bỏ vô tủ lo bên trong
+
+VẪN CODE NHƯ XƯA NAY: NEW TỦ, GỌI HÀM HÀNH ĐỘNG CỦA TỦ ĐỒ NEW RIÊNG ĐỂ VÔ
+1. MUA TỦ
+2.1 MUA ĐỒ
+2.2 CẤT ĐỒ VÔ
+
+==================
+COLLECTIONS FRAMEWORK
+
+- Là một túi ựng các con trỏ chỏ đến vựng ram khác nhau
+
+- Là một dạng đói tượng, phải new, giong mảng nhưng không cần phải nói trước chiều dài, cho vào bao nhiều con trỏ thì túi tự động nở ra bấy nhiêu.
+
+- Vẫn theo nguyên lý nơi nào lưu trữ nhiều data nhất thì nơi đó nên xử lý chính data đó. => Các hàm them con trỏ, xóa con trỏ, sắp xếp con trỏ,....u do cái  giỏ xử lý.
+
+- Ba loại: Từ ba Class Cha abstract khác nhau: (chỉ là sự phân loại/phân cấp của các loại tủ)
+Kế thừa từ Class List bao gồm ArrayList, Vector 
+Kế thừa từ class Set bao gồm HashSet,   TreeSet
+Kế thừa từ class Map bao gồm HashMap,   TreeMap
+
+- Sáu loại túi này là túi that, new được, không phải là abstract, hoàn hảo để dung, full hành động
+
+- Phân loại cao hơn cho tủ/ giỏ cụ thể
+Tủ Cha, toan laf abstract/interface 
+
+List (danh sách): vào thứ tự nào ra thứ tự ấy, một hình thức của mảng nâng cao, co giãn kích thước
+
+Set (tập hợp): HashSet lộn xộn thứ tự; TreeSet sắp xếp tự động; Đều khôngợc lặp lại mónồ lần thứ hai
+Map (bộ ánh xạ, từ này ra kia, cặp key - value)
+
+- Khai Cha new Con()
+- Khai Con new Con()
+
+================================================
+WRAPPER CLASS - CLASS BAO
+(KỸ THUẬT BOXING, UNBOXING)
+
+* MỌI THỨ TRONG CODE JAVA PHẢI LÀ OBJECT
+Hiện nay Java có hai loại data type: PRIMITIVE VÀ OBJECT
+
+PRIMITIVE: byte, short, int, long, float, double, char, boolean
+- lưu value trực tiếp trong vựng nhớ được cấp
+- chỉ tốn ùng một vựng ram 4 byte onoff transitorể lưu
+
+OBJECT: kiểu đối tượng, phức tạp hơn, không phải chỉ là value lấy ra xài luôn
+- tốn hai vựng ram, 1 biến con trỏ/ biến object  = new Object nào đó và lưu tọa đồ vựng new
+
+Lập hướng đối tượng tức là tất cả phải xoay quanh đối tượng, ví dụ như Scanner, Math,...
+- Tức không consitancy khi tồn tại biến primitive
+
+JAVA LÀ NGÔN NGỮ LẬP TRÌNH THUẦN 100% ĐỐI TƯỢNG/ OBJECT
+TỨC NHỮNG THỨ QUANH TA MÀ GOM NHÓM,ẶT TÊN CHUNG ƯỢC THÌ SẼ XUẤT HIỆN NHÓM/ KHUÔN, CLASS, PHÂN LOẠI
+VÍ DỤ:
+số 1, 76, 3, 66, -9
+mô tả, đặc điểm: - Có giá trị/ ại lượng
+		 - số nguyên, không lể
+mô tả hành động: - so sánh các đại lượng của nhau
+ 
+==> THUỘC NHÓM INTERGER
+==> CLASS Interger
+==> Xuất hiện để bao value interger lại để thành object
+
+public class Interger {
+  private int value;
+
+  public Interger(int value) {
+     this.value = value;
+  }
+}
+
+..get/set
+
+KHI THIẾT KẾ COLLECTTIONS FRAMEWORK THÌ CÁC TỦ/ GIỎ ĐỀU CHỈ CHƠI VỚI OBJETC
+List<Interger> arr = new ArrayList();
+
+List<int> arr = new ArrayList(); //không thể được
+VÌ GIỎ CHỈ QUẢN LÝ ĐƯỢC OBJECT/ CON TRỎ NÊN CHỈ QUẢN LÝ ĐƯỢC INTERGER
+
+KHI NÀO CẦN DÙNG OBJECT THÌ MỚI DÙNG INTERGER VÌ NÓ TỐN RAM, CÒN KHÔNG ĐẶC BIỆT THÌ DÙNG int
+int yob = 1999;
+Interger yob = new Interger(2000);
+
+Interger yob = 2003; //new ngầm, vẫn new nhưng không viết ra
+                     //Kỹ thuật boxing, đóng hộp primitive/ literal
+
+int a = yob;  //Kỹ thuật unboxing
+
+public static Integer valueOf(int i)
+//Từ phiên bản java 9 trở thành

@@ -1,0 +1,62 @@
+CHỐT HẠ VỀ OOP
+
+-OOP CONCEPTS / OOP PRINCIPLES / FUNDAMENTAL CONCEPTS OF OOP / FOUR PILLARS OF OOP
+
+1. ABSTRACTION - TÍNH TRÌU TƯỢNG HÓA MỌI VẬT (KHÔNG NHẦM LẪN VỚI ABSTRACT CLASS)
+ - Là cách tư duy, cách suy nghĩ, chuyển đổi, biểu diễn nhwungx thứ phức tạp trong cuộc song thành những thứ đơn giản hơn những vẫn diễn tả được đúng ý nghĩa của sự vật ban đầu.
+ - Là cách nói về những thứ phức tạp trong cuộc sống thông qua một thứ khác đơn giản hơn mà vẫn không làm mất đi ý nghĩa của thứ phức tạp ban đầu.
+ - Là cách biểu diễn lại một thứ phức tạp ngoài đời một cách dễ hiểu hơn.
+ - Cách lấy ra những thông tin quan trọng nhất, tiêu biểu nhất của một object phức tạp ngoài đời để biểu diễn lại cho ai cũng hiêu được thứ phức tạp.
+ - Một thứ phức tạp ngoài đời đc biểu diễn qua một thứ đơn giản hơn mà vẫn không làm mất chat
+ - USING A SIMPLE THINGS TO PRESENT A COMPLEX THINGS
+ - EXTRACT THE SIGNIFICANT FEATURES/CHARACTERISTICS OF A COMPLEX THINGS TO FORM A SIMPLE/EASY CATCHING THINGS WITHOUT LOSING THE ORIGINAL OF THE COMPLEX ONES
+==> TƯ DUY NẮM BẮT NHỮNG THÔNG TIN QUAN TRỌNG CỦA OBJETC NGOÀI ĐỜI, DÙNG DĐỂ BIỂU DIỄN LẠI OBJECT ĐÓ
+VÍ DỤ: Sinh Viên ngoài  rất phức tạp về info như: tên, tuổi, ịa chỉ thường trú, tạm trú, lịch trình di chuyển, gia cảnh, ba mẹ, sở thích, chuyên ngành,..... bao gồm rất nhiêu thoong tin vì mỗi Sinh viên lại khác nhau, quá phức tạp.
+Trường đại học không cần hết tất cả những thông tin này, vẫn có thể quản lý ược những thứ/object/sinh viên phức tjap này bang việc tìm ra những thông tin ặc trưngể quản lý, biểu diễn/minh họa/mô tả/ represent một sinh viên
+Sinh Viên (id, email trường, tên, ịa chỉ , sđt, chuyên ngành, iểm các môn) => day la rut gon/extract chỉ lấy những info quan trọng nhất, có nghĩa nhất de minh họa, biểu diễn một SV bất kỳ, day là TRÌU TƯỢNG HÓA MỘT SV
+==> Tương ương thao tác tìmặc iểm quan trọng của mot doi tuong
+=> TÌM ĐẶC ĐIỂM QUAN TỌNG CỦA MỘT OBJECT, TÌM C ĐIỂM CHO MỘT CLASS/KHUÔN -> ABSTRACTION 
+=> MÔ TẢ LẠI MỘT CÂU CHUYỆN / THỨ NÀO ĐÓ ĐỂ AI CŨNG HIỂU ĐƯỢC -> TÍNH TRÌU TƯỢNG / TÍNH MÔ TẢ / NGẮN GỌN -> TRÌU TƯỢNG HÓA CHÍNH MÀ MÔ TẢ HÌNH DUNG TRONG ĐẦU
+(!= ABSTRACT CLASS Là sự phân loại, trong sự phân loại dựa trên đặc điểm của sự vật này  bao gồm cả tính ABSTRACTION)
+
+2. ENCAPSULATION - (HỆ QUẢ CỦA TÍNH TRÌU TƯỢNG HÓA) CÔ LẬP ÓNG GÓI MỌI THỨ
+
+- Là việc nhận diện một đối tượng gốmặc tính và hành vi, gom chung trong một n vị là object/class(tổng quát)
+- Tức là lập trình xoay quanh việc viết hàm(xử lý data) + biến (data) gom chung vào một n vị code/class/object
+- Gom xong thì phải giấu/che i bang thuật ngữ private, show ra nếu muốn bang public/protected
+- TẠO CLASS ĐÓNG GÓI MỌI THỨ GỒM ĐẶC ĐIỂM + HÀNH VI, CHE VÀ KHÔNG CHE
+- Giống viên thuốc con nhộng, khi vỏ ngoài là protein tan khi uống vào còn bên trong là bột thuốc. Khi nhìn bên ngoài vỏ thuốc sẽ không thấy ược thuốc bên trong. Do chính là hànhộng gói lại, tiếng anh là động từ ENCAPSULATE, gói lại, che giấu, có thể trong suốt nếu muốn nhưng trong  chắc chắn chỉ có thuốc.
+- Như vậy encapsulation chính là việc gom info và xử lý vào tỏng một n vị, che giau và show ra khi cần thiết.
+VÍ DỤ, 
+TIVI được che bang vỏ nhựa màu và màn hình, ta chỉ có thể tương tác qua remote/nút bấm mà không thấy dc bên tỏng tivi ra sao, xử lý info + quét data bộ phim wifi/vô tuyến, ta không quan tâm bên tỏng tivi các cách xử lý đo xử lý như thế nào. ta chỉ quan tâm việcứng ngoài tivi, ta vẫn có thể giao tiếp với nó bang public remote, nút bấm. tivi chính là một ví dụ về encapsulate.
+ATM cũng vậy, ta không thể thấy khay tiền private, không thấy ược cục hít tiền, không thaays ược cách nó xử lý các bộ phận bên trong nó như thế nào, ta chỉ thấy được cách cái public như hànhộng rút tiền,...
+
+==> ENCAPSULATION CHÍNH LÀ CÁCH GOM BIẾN / DATA VÀ HÀM VÀO MỘT ĐƠN VỊ ĐỐI TƯỢNG/ VẬT THỂ/ OBJECT/ CLASS CHỈ LÀM NHỮNG VIỆC CỦA NÓ ĐƯỢC CHỈ ĐỊNH THIẾT KẾ
+==> GOM GÌ THÌ CẦN ABSTRACTION ĐỂ LẤY CÁI ĐẶC TRƯNG, VÍ DỤ TIVI THÌ XEM PHIM, KHÔNG GÁNH THÊM VIỆC CỦA LÒ NƯỚNG.
+==> ABSTRACTION LÀ LẤY RA ĐẶC TRƯNG (nhận diện object), ENCAPSULATION  LÀ GÓI TRỌN VẸN ĐÚNG THỨ CẦN LÀM (tạo class instance variable + method().
+
+3. INHERITANCE - TÍNH KẾ THỪA TÁI SỬ DỤNG/ CÓ XÀI LUÔN, KHÔNG CẦN THAO TÁC THÊM GÌ NỮA
+
+- Reuse lại code mà không cần phải làm lại code, thậm chí không cần phải copy and paste. Ngoài đời chính là việc con được thừa kế tài sản, di sản, di truyền từ ba má!!
+
+- Tăng tốc quá trình viết code khi có oạn code, object đã làm tốt việc của nó rồi. ta tận dụngể mở rộng them khả năng của object mới, dung lại đồ object cũ và them phần dị biệt/code mới ta làm them
+
+TĂNG TỐC LÀ YẾU TỐ QUAN TRỌNG: VÍ DỤ NHƯ BA MẸ GIÀU CÓ THÌ MÌNH SẼ THUẬN LỢI TRONG VIỆC LÀM ĂN. NẾU BA MẸ CHO NHÀ Ở THÌ MÌNH ĐỠ LO TIỀN TRỌ, TA CHỈ CẦN PHẢI LO TIỀN ĂN. BA MÁ CHO VỐN THÌ TA LÀM GIÀU NHANH HƠN...
+
+THAY VÌ BÒN RÚT KIỂU BẤT HIẾU TỨC LÀ CHỈ DÙNG CHỨ KHÔNG CHỊU LÀM THÊM THÌ NAY TA BẬT/ HỘI NHẬP/ JOIN CUỘC SỐNG NHANH HƠN, TỰ TIN HƠN
+
+VÍ DỤ NHƯ CÁC THƯ VIỆN VIẾT CODE ĐỂ LÀM APP NHANH HƠN, KHÔNG CẦN PHẢI LÀM LẠI TỪ ĐẦU. CÓ THƯ VIỆN THÌ TA SẼ DỄ MỞ RỘNG THƯ VIỆN CHO NHU CẦU RIÊNG, ĐA NĂNG SỬ DỤNG, TĂNG TỐC VIẾT CODE.
+
+CÓ HAI LOẠI KẾ THỪA, MỘT LÀ CHA CỤ THỂ VÀ HAI LÀ CHA TRÌU TƯỢNG. KẾ THỪA CHÍNH LÀ CÁCH GOM NHÓM, PHÂN LOẠI SỰ VẬT NGOÀI ĐỜI, GOM NHÓM NGOÀI ĐỜI.
+
+THÀNH QUẢ CỦA KẾ THỪA SE LÀM TĂNG TÍNH TRÌU TƯỢNG HÓA VÀ TÍNH ĐÓNG GÓI. Việc các lớp con kế thừa từ lớp trìu tượng hoặc implements các interface sẽ cung cấp các đặc tính và hành vi cho lớp con, ẩn i các chi tiết ở lớp con và chỉ hiển thị những gì cần thiết. đồng thời việc dung các từ khóa truy cậpể kiểm soát mứcộ truy câp làm tang tính đóng gói. 
+
+4. POLYMORPHISM - TÍNH ĐA HÌNH / ĐA ÁNH XẠ - MỘT RA NHIỀU
+
+VÍ DỤ, Lời kêu gọi toàn quốc kháng chiến của Bác Hồ 1946 có câu: ai có súng dung súng, ai có dao dung dao, không có súng có dao thì dung quốc xẻng gậy gộc,... Tức chỉ là một hành động Kháng-Chiến() nhưng mỗi tang lớp trong xã hội lại implements nó bang cách khác nhau, a dạng cách implements cho hang động Kháng-Chiến(). Từ một hành động Kháng-Chiến có N cách làm khác nhau, đó gọi là tính đa dạng, biến hình, đa sắc thái, đa nhân cách, đa hình POLYMORPHISM.
+
+TỪ MỘT HÀM CỦA CHA CÓ N CON @OVERRIDE QUA MẶT, CHÍNH LÀ TÍNH ĐA HÌNH. GỌI HÀM CHA MÀ HÀM CON CHẠY 
+
+==> ĐẢM BẢO TÍNH ĐA DẠNG CỦA CÁC HÀNH ĐỘNG DÙ VẪN CHƠI CHUNG VÀ THỐNG NHẤT HÀNH ĐỘNG QUA TÊN GỌI
+
+@OVERRIDE CHÍNH LÀ HIỆN THỰC CHO TÍNH ĐA HÌNH

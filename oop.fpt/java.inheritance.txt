@@ -105,3 +105,19 @@ Chỉ xài cách này nếu chỉ cần làm một object on the go (chú ý là
 
 - Giải quyết Khai Cha new Cha(..) khi Cha abstract - mượn  gió bé măng, viết code on the go
 - Hiện tượng Anonymous class, vùng ram vẫn lớn như vùng ram của các class con, chỉ khác là nó không có tên, không nhân bản được.// phân biệt với Anonymous object sinh ra một lần rồi chết do garbage collector của jvm dọn khi chạy chương trình.
+
+==============================
+TỔNG KẾT CHUNG CHO KẾ THỪA
+- THỪA HƯỞNG ĐẶC ĐIỂM VÀ HÀNH VI
+- CÓ HỌ HÀNG, BÀ CON, VÌ CHUNG ĐẶC ĐIỂM
+- LIÊN QUAN ĐẾN CÂY PHÂN LOẠI, PHÂN LOẠI OBJECT TRONG CUỘC SỐNG CỦA CON NGƯỜI. VÍ DỤ LOÀI / CHI / LỚP/ BỘ/ NGHÀNH,..... 
+
+THỨ NHẤT, PHẢI ĐỌC ĐƯỢC CÂU "IS A KIND OF" ỌC MỘT CHIỀU. Con là một phiên bản của cha, hình vuông là hình chữ nhật, mèo là một thú cưng. 
+Con thừa hưởng các đặc điểm và hành vi của cha
+
+THỨ HAI, CÓ HAI LOẠI THỪA KẾ, 
+MỘT LÀ CHA CỤ THỂ - CON CỤ THỂ - Con có thể @Override nếu muốn và có thể có thêm dị biệt nếu muốn vì đã có đủ từ cha "hoàn hảo" rồi. Có thể KHAI CHA NEW CHA(..). KHAI CHA NEW CON(..). KHAI CON NEW CON(..).
+HAI LÀ CHA TRỪU TƯỢNG - CON HOẶC TRỪU TƯỢNG (vô sinh, không new được object) HOẶC PHẢI CODE CHO CHA (Con bắt buộc phải @Override cho Cha, Con có thể có dị biệt nếu muốn)
+ĐÂY LÀ TRƯỜNG HỢP KHAI CHA NEW CHA(..@OVERRIDE) //anonymous do làm being tạo con sẵn
+KHAI CHA NEW CON(..)
+KHAI CON NEW CON(..)

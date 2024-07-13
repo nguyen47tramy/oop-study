@@ -1,0 +1,92 @@
+INTERFACE
+- TẬP TRUNG VÀO HÀNH ĐỘNG, KHÔNG CARE ĐẾN ĐẶC TÍNH, TỨC ĐẶC TÍNH KHÁC NHAU, KHÔNG THỂ ĐỌC ĐƯỢC LIÊN QUAN CHA CON IS A KIND OF VỚI NHAU.
+- VÍ DỤ: HỘI NHÓM LÀ GOM NHÓM CÁC THÀNH VIÊN CÓ CHUNG SỞ THÍCH, CHÍ HƯỚNG HÀNH ĐỘNG, KHÔNG CARE NGUỒN GỐC XUẤT THÂN - CLB ĐI PHƯỢT - gom nhóm nhwungx bạn từ khắp nơi, chỉ thích quan tâm, cuộc đời là những chuyến đi, bất kể là Student, Worker, Lecturer, Freelancer, Employee, mien bạn sẵn sàng lên đường. BẠN LÀ MEMBER OF HỘI-PHƯỢT-THỦ (thể hiện tính long lẻo của việc gom nhóm, kết hợp / khác IS A KIND OF mang tính chat chẽ trong phân loại, bao gồm đặc điểm và hành vi. ) 
+- KHUÔN NÀY VỚI KHUÔN KIA CHỈ DÍNH DÁNG VỚI NHAU CHÚT XÍU VỀ HÀNH ĐỘNG ĐỂ CHÚNG CÓ THỂ CHUNG NHAU 1 CHÚT GÌ ĐÓ TRÊN HÀNH ĐỘNG. TỤ TẬP ĐƯỢC 1 NHÓM CÙNG HÀNH ĐỘNG, CÓ NHÓM THÌ CÓ TÊN, CÓ CLASS - CLASS LÀ CÁCH GOM NHÓM
+
+====> CÓ HAI CÁCH GOM NHÓM
+ - GOM TRÊN ĐẶC ĐIỂM VÀ HÀNH VI - INHERITANCE/ ABSTRACT CLASS (HỌ HÀNG, BÀ CON)
+ - GOM TRÊN HÀNH VI, TỤ TẬP NHAU LÀM GÌ ĐÓ - INTERFACE - CHUNG GIAO TIẾP (HỘI NHÓM)
+
+-------------
+ỨNG DỤNG CỦA INTERFACE
+
+- Giúp một class/object có nhiều cách hành sử khác nhau, như tôi là member của hội nào thì tui có hànhộng của hội ó, giúp cho một object/con người đóng nhiều vai, vai nào thì có hành động tương ứng. ==> Chính là một hình dạng của đa kế thừa - multi-inheritance
+
+- Trong Java, một class con chỉ có tối a một cha - được gọi là đơn kế thừa - single-inheritance, chỉ extends đúng một class cha. Không phải ngôn ngữ nào cũng được thiết lập để đơn kế thừa, ví dụ như với C++, một con được kế thừa từ nhiều cha:
+  Cha 1: hàm f(x)... có code
+  Cha 2: hàm z().. hàm f(x)..có code
+  Cha 3: hàm f(x).. có code
+  Con kế thừa cả Cha1, Cha2, Cha3
+==> Tạo ra tình huống ambiguous, không rõ rang, tang gia bối rối, khi biến object.f(x), gọi hàm f(x)
+
+Java không để việc ambiguous khi kế thừa như trên xảy ra bang cách chỉ cho Con chỉ kế thừa một Cha. 
+Với class  Cha, hàm f(x) có code hay không có code không quan trọng, khi Con kế thừa chỉ một Cha thì gọi hàm f(x) nếu Cha có code thì dung luôn hàm f(x) của Cha, nếu cha abstract f(x) thì Con phải có   code, khi gọi thì chương trình sẽ chạy hàm của Con.
+
+Nhưng trong C++, đa kế thừa thì Con có quyền bị ảnh hưởng từ nhiều Cha, mỗi Cha cho một tí hàm. ==> Tức Con sẽ đa dạng hành động từ các Cha
+
+Nay trong Java, Con chỉ có một Cha nhưng có quyền tham gia nhiều CLB / Interface. ==> Choi trong CLB nào thì có hànhộng cảu CLB đấy. Vẫn ảm bảo tiêu chí Con có nhiều hành động từ bên ngoài giống như Con có hành  từ nhiều CHa như phong cách cũ của đa kế thừa.
+
+==============
+VIẾT CODE
+
+public class Con/Hội-Viên implements CLB1, CLB2, CLB3 {
+
+@Override tất cả các hành động của CLB; 
+
+}
+
+Vì CLB không có dặc điểm nên không có constructor/phễu, nhưng có hàm abstract ==> vẫn có vựng không gian ram. Khi new Con thì CLB vẫn sẽ được new để CHa sẽ là cánh chin, đưa Con extends @Override.
+Member/Con vẫn sẽ có một vựng ram của CLB - chứa hàm abstract, con trỏ vẫn sẽ trỏ lưng chừng CLB, vẫn @Override vì Con có hàm trùng tên Cha và có code tự làm.
+==> Vẫn theo mô hình Ram của abstract Class/Cha truyền thống. Con to hơn Cha/CLB về vùng Ram. 
+super() Cha CLB là super() ngầm
+
+public class Con/Hội-Viên extends Cha implements CLB1, CLB2, CLB3 {
+
+@Override tất cả các hành động của Cha nếu Cha là abstract class;
+@Override tất cả các hành động của CLB; 
+
+}
+
+===>> 	CON ĐÓNG NHIỀU VAI: vai dòng họ, vai CLB, going ngoài đời
+Nếu Cha, CLB có cùng tên hàm f() ngoài những hàm khác, thì Con không hề bối rối/ambiguous vì hàm của con là @Override ==> lúc nào chạy cũng sẽ chạy hàm của con.
+
+**ANONYMOUS
+object vãng-lai tham gia CLB => vẫn phải @Override những hànhộng của CLB, chỉ ngay lúc  thôi - on the go.
+Căn theo Cha/phân loại chung mà gọi
+
+Shape x = new Shape(...){
+  @Override 
+  Hàm của phân loại chung, class Cha abstract;
+
+};
+tương đương
+Shape r = new Rectangle(..); //khi đã biết objetct thuộc nhóm rõ rang trước  là Rectangle
+
+Đối với Interface
+
+CLB-Cờ x = new CLB-Cờ {
+  @Override
+  Hàm của CLB-Cờ;
+
+};
+
+ABSTRACT CLASS VÀ INTERFACE ĐỀU LÀ HAI THỨ KHÔNG HOÀN HẢO, CHỈ NÓI Ý TƯỞNG MÀ KHÔNG TRIỂN KHAI LÀM.
+CON/MEMBER CẦN PHẢI HOÀN TẤT CÂU CHUYỆN KHÔNG HAONF HẢO BẰNG VIỆC @OVERRIDE
+
+DÙNG THÊM KỸ THUẬT MƯỢN GIÓ BẺ MĂNG, MƯỢN CHA, CLB ĐỂ NEW RA OBJECT THUỘC NHÓM CHA/CLB. @OVERRIDE ON THE GO/ TAKE AWAY
+
+OBJECT VÃNG LAI KHÔNG XÁC ĐỊNH NHÓM TRƯỚC MÀ MUỐN THAM GIA CUỘC CHƠI/ CLB / DÒNG HỌ THÌ PHẢI CƯ XỬ NHƯ DÒNG HỌ/ MEMBER
+
+KHÔNG GỌI CHÍNH XÁC NHÓM CỦA BẠN, NHƯNG GỌI BẠN THWO NHÓM BẠN THAM GIA, THEO NHÓM CÁC BẠN CHƠI.
+
+VÙNG RAM VÀ MỌI HÀNH XỬ CHẤM @oVERRIDE QUA MẶT NHƯ BÌNH THƯỜNG, DO LÀ BIẾNG TẠO CLASS RỜI - CONCREATE CLASS
+
+==> ĐẶC TRƯNG CỦA NTERFACE LÀ LÀM CHO CODE TRỞ NÊN LINH HOẠT - LOOSE COUPLING (GẮN KẾT LỎNG LẺO) GIÚP CHO CÁCH TỔ CHỨC CÁC CLASS CÓ RÀNG BUỘC VỚI NHAU NHƯNG LẠI DẼ DÀNG MỞ RỘNG VÀ THAY ĐỔI
+==> DÙNG INTERFACE LÀ CÁCH VIẾT CODE GIÚP LINH HOẠT, DỄ DÀNG THAY ĐỔI CODE MÀ KHÔNG PHẢI SỬA PHẦN CODE CŨ, DÙNG DỄ DÀNG MỞ RỘNG CODE, THÍCH ỨNG CHO TƯƠNG LAI,...
+==> INTERFACE LÀ CÁCH KẾT GIAO, MỞ RỘNG GIAO TIẾP KẾT NỐI VỚI XUNG QUANH
+==> COMPARABLE/COMPARATOR LÀ MỘT TRONG ỨNG DỤNG CỦA INTERFACE, LOOSE COUPLING
+
+**MỤC TIÊU TỐI THƯỢNG CỦA INTERFACE: CHƠI CHUNG ĐƯỢC VỚI NHAU DÙ BẠN KHÁC BIỆT TRONG HÀNH XỬ, MỖI THẰNG ĐUA KHÁC NHAU NHƯNG LẠI CÙNG ƯỜNG ĐUA, MỖI THẰNG HÚT KHÁC NHAU NHƯNG LẠI CÙNG CLB CHÍCH, MỖI BẠN ĐÁNH CỜ KHÁC NHAU NHƯNG CÙNG VÁN CỜ, MỖI CARD ĐỒI HỌA KHÁC NAU VỀ NĂNG LỰC XỬ LÝ NHƯNG CHUNG KHE PCI-EX. MỖI THIẾT BỊ ĐIỆN KHÁC NHAU VỀ CÔNG NĂNG SỬ DỤNG NHƯNG CHUNG Ổ CẮM 220V
+
+
+
